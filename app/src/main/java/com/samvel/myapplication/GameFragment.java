@@ -54,6 +54,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
 
         builder.setView(theEnd);
         endDialog = builder.create();
+        endDialog.setCancelable(false);
 
         gridlayout = view.findViewById(R.id.gridlayout);
 

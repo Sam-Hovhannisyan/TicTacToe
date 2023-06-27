@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,83 +8,100 @@
     tools:context=".GameFragment">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100sp"
         android:shadowColor="@color/black"
         android:shadowRadius="25"
         android:text="Tic Tac Toe"
         android:textAlignment="center"
         android:textColor="@color/milk"
         android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
     <GridLayout
         android:id="@+id/gridlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50sp"
+        android:columnCount="3"
         android:rowCount="3"
-        android:columnCount="3"/>
+        app:layout_constraintBottom_toBottomOf="@+id/startBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <LinearLayout
         android:id="@+id/pl1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30sp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/startBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ptext"
+        app:layout_constraintVertical_bias="0.2">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
             android:text="Player 1"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            android:layout_marginHorizontal="10sp"/>
+            android:textSize="24sp" />
+
         <EditText
             android:id="@+id/pe1"
             android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:hint="Name..."
-            android:paddingHorizontal="20sp"
-            android:paddingVertical="10sp"
-            android:textSize="18sp"
-            android:textColorHint="#80000000"
-            android:textColor="@color/black"
             android:background="@drawable/edittext_bg"
             android:drawableRight="@drawable/xtr"
+            android:hint="Name..."
             android:inputType="textPersonName"
-            />
+            android:paddingHorizontal="20sp"
+            android:paddingVertical="10sp"
+            android:textColor="@color/black"
+            android:textColorHint="#80000000"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/pl2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30sp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/startBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pl1"
+        app:layout_constraintVertical_bias="0.1">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
             android:text="Player 2"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            android:layout_marginHorizontal="10sp"/>
+            android:textSize="24sp" />
+
         <EditText
             android:id="@+id/pe2"
             android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:hint="Name..."
-            android:paddingHorizontal="20sp"
-            android:paddingVertical="10sp"
-            android:textSize="18sp"
-            android:textColorHint="#80000000"
-            android:textColor="@color/black"
             android:background="@drawable/edittext_bg"
             android:drawableRight="@drawable/otr"
+            android:hint="Name..."
             android:inputType="textPersonName"
-            />
+            android:paddingHorizontal="20sp"
+            android:paddingVertical="10sp"
+            android:textColor="@color/black"
+            android:textColorHint="#80000000"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -91,7 +109,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="180sp">
+        app:layout_constraintBottom_toTopOf="@+id/gridlayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.2">
+
         <TextView
             android:id="@+id/ptext1"
             android:layout_width="wrap_content"
@@ -100,8 +123,7 @@
             android:text="Player 1"
             android:textColor="@color/milk"
             android:textSize="20sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ptext2"
@@ -111,8 +133,7 @@
             android:text="Player 2"
             android:textColor="@color/milk"
             android:textSize="20sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
     </LinearLayout>
 
 
@@ -121,8 +142,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
-        android:layout_gravity="center|bottom"
-        android:layout_marginBottom="50sp"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
