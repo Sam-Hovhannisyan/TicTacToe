@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".GameFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100sp"
+        android:shadowColor="@color/black"
+        android:shadowRadius="25"
+        android:text="Tic Tac Toe"
+        android:textAlignment="center"
+        android:textColor="@color/milk"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <GridLayout
+        android:id="@+id/gridlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50sp"
+        android:rowCount="3"
+        android:columnCount="3"/>
+
+    <LinearLayout
+        android:id="@+id/pl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 1"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginHorizontal="10sp"/>
+        <EditText
+            android:id="@+id/pe1"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:hint="Name..."
+            android:paddingHorizontal="20sp"
+            android:paddingVertical="10sp"
+            android:textSize="18sp"
+            android:textColorHint="#80000000"
+            android:textColor="@color/black"
+            android:background="@drawable/edittext_bg"
+            android:drawableRight="@drawable/xtr"
+            android:inputType="textPersonName"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 2"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginHorizontal="10sp"/>
+        <EditText
+            android:id="@+id/pe2"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:hint="Name..."
+            android:paddingHorizontal="20sp"
+            android:paddingVertical="10sp"
+            android:textSize="18sp"
+            android:textColorHint="#80000000"
+            android:textColor="@color/black"
+            android:background="@drawable/edittext_bg"
+            android:drawableRight="@drawable/otr"
+            android:inputType="textPersonName"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="180sp">
+        <TextView
+            android:id="@+id/ptext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50sp"
+            android:text="Player 1"
+            android:textColor="@color/milk"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/ptext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50sp"
+            android:text="Player 2"
+            android:textColor="@color/milk"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="50sp"
+        />
+
+</FrameLayout>
